@@ -51,11 +51,27 @@ def main():
                   break
          
          if(not ehMenor):
+               
                listaPesquisa.append(candidato)   
-         
+      
          cont += 1
-      
-      
 
+      if(cont == MAX_SIZE):
+         
+         if(not listaPesquisa):
+                  
+               print("Resultados não compatíveis")
+                  
+         else:
+                  
+               for candidato in listaPesquisa:
+                  
+                  user = extrairNumbers(candidato[1].split('_'))
+
+                  print(f'''{candidato[0]}: Entrevista: {user[0]}, Teórico: {user[1]}, Prático: {user[2]}, SoftSkill: {user[3]}
+--------------------------------------------------------------------''') 
+            
+         break
+      
 if __name__ == "__main__":
     main()

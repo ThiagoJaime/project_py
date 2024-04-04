@@ -18,5 +18,19 @@ def extrairNumbers(notas):
         numeros.extend([int(num) for num in re.findall(r'\d+', nota)])
     return numeros
    
+def main():
+
+   while True:
+      notas = input('''
+         Digite as notas: 1º entrevista, 2º teórico, 3º prático, 4º softSkill
+         Exemplo: '4,4,8,8'
+         -> ''').replace(' ', '')
+      
+      if(not validaInput(notas)):
+         print("Digite no formato certo!\n")
+      else:
+         break
+
+
 if __name__ == "__main__":
     main()

@@ -27,10 +27,35 @@ def main():
          -> ''').replace(' ', '')
       
       if(not validaInput(notas)):
-         print("Digite no formato certo!\n")
+         print("Digite no formato correto!\n")
       else:
          break
+   
+   listaNota = notas.split(',')
+   listaPesquisa = []
+   MAX_SIZE = len(db)
+   cont = 0
 
+   while True:
+
+      for candidato in db:
+
+         numbers = extrairNumbers(candidato[1].split('_'))
+
+         ehMenor = False
+
+         for i in range(len(numbers)):
+
+               if(numbers[i] < int(listaNota[i])):
+                  ehMenor = True
+                  break
+         
+         if(not ehMenor):
+               listaPesquisa.append(candidato)   
+         
+         cont += 1
+      
+      
 
 if __name__ == "__main__":
     main()

@@ -8,5 +8,15 @@ db = [
    ['Candidato 5', 'e10_t10_p8_s9']
 ]
 
+def validaInput(entrada):
+    padrao = r'^\d+,\d+,\d+,\d+$'
+    return bool(re.match(padrao, entrada))
+
+def extrairNumbers(notas):
+    numeros = []
+    for nota in notas:
+        numeros.extend([int(num) for num in re.findall(r'\d+', nota)])
+    return numeros
+   
 if __name__ == "__main__":
     main()

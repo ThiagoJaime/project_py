@@ -22,5 +22,5 @@ $ git clone https://github.com/ThiagoJaime/project_py.git
 
 #### 2. Abra o terminal dentro da pasta do projeto e execute o seguinte comando
 ```sh
-$ python project_py
+$ python index.py
 ```
